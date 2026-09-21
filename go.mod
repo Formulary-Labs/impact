@@ -2,12 +2,10 @@ module github.com/Formulary-Labs/impact
 
 go 1.25.0
 
-require github.com/Formulary-Labs/substrate v0.0.0
+require github.com/Formulary-Labs/substrate v0.1.0
 
 require (
 	github.com/gemaraproj/go-gemara v0.10.0 // indirect
 	github.com/goccy/go-yaml v1.19.2 // indirect
 	github.com/google/uuid v1.6.0 // indirect
 )
-
-replace github.com/Formulary-Labs/substrate => ../substrate
