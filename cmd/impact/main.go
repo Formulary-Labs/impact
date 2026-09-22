@@ -69,10 +69,10 @@ func main() {
 		enc := json.NewEncoder(os.Stdout)
 		enc.SetIndent("", "  ")
 		enc.Encode(map[string]interface{}{ //nolint:errcheck
-			"dry_run":    true,
-			"rows":       len(rows),
-			"catalog":    cat.Metadata.Id,
-			"framework":  frameworkFromCatalog(cat),
+			"dry_run":   true,
+			"rows":      len(rows),
+			"catalog":   cat.Metadata.Id,
+			"framework": frameworkFromCatalog(cat),
 		})
 		os.Exit(exit.OK)
 	}
@@ -115,7 +115,7 @@ func writeCSV(path string, rows []assess.Row) error {
 	if path == "-" {
 		w = csv.NewWriter(os.Stdout)
 	} else {
-		if err := os.MkdirAll(filepath.Dir(path), 0o755); err != nil && filepath.Dir(path) != "." {
+		if err := os.MkdirAll(filepath.Dir(path), 0o750); err != nil && filepath.Dir(path) != "." {
 			return fmt.Errorf("creating output directory: %w", err)
 		}
 		f, err := os.Create(path)
